@@ -1,0 +1,29 @@
+\part{Multi-arm bandits}
+K-摇臂赌博机在选择一个动作后，有一定的概率获得奖励，但是这个概率是我们不知道的，设在时间$t$采取的动作为$A_t$，
+获得的奖励为$R_t$,使用$p_* (a)$表示动作$a$预计的奖励则有$$p_* (a)=\boldsymbol{E}[R_t|A_t =a]$$
+假设我们得到动作$a$的奖励的估计，我们每次采取奖励最大的动作。我们记在时间$t$，动作$a$的奖励为
+$Q_t(a) \approx q_* (a)$, 每次采取奖励最大的动作作为当前动作，即使用贪心算法。在试探的过程，有两种策略，
+一种称之为探索，每个动作均有机会被试探，能够获得每个动作的奖励的估计，一种为利用，即，每次采取奖励最高的动作，
+能够较为迅速的找到最优的动作策略。
+
+\section{Action-Value Method}
+我们需要获得每一个动作的奖励的估计，一种简单的方法就是使用平均数：
+$$ Q_t(a)=\frac{ \sum_{i=1}^{t-1} R_i \cdot \boldsymbol{1}_{A_i=a} }{ \sum_{i=1}^{t-1}\boldsymbol{1}_{A_i=a} } $$
+为了平衡探索和利用，我们在贪心算法中以概率$\epsilon$随机选择动作，最终的决策为：
+$$
+A_t=
+\begin{cases}
+  \mathop{\arg\max}_a Q_t(a) & \mbox { possibility is 1 - \epsilon }\\
+  random & \mbox{possibility is \epsilon}
+\end{cases}
+$$
+算法步骤：
+\begin{algorithm}[H]
+    \caption{$\epsilon-greedy$}
+    \KwIn{摇臂数 K；奖赏函数 R；尝试次数 T；探索概率 \epsilon}
+    \KwOut{累计奖励 r}
+
+    r=0\;
+    $\forall a =1,2,\cdots,K:Q_0(a)=0,count(a)=0$\;
+
+\end{algorithm}
