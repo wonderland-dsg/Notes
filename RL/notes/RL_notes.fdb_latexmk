@@ -1,9 +1,9 @@
 # Fdb version 3
-["xdvipdfmx"] 1506241961 "RL_notes.xdv" "RL_notes.pdf" "RL_notes" 1506241961
-  "RL_notes.xdv" 1506241961 1988 a314c521731f593b9c0b0bcbfa1e73ca "xelatex"
+["xdvipdfmx"] 1506246253 "RL_notes.xdv" "RL_notes.pdf" "RL_notes" 1506246253
+  "RL_notes.xdv" 1506246253 19280 ec7940150c59bd792ddb85906037b011 "xelatex"
   (generated)
   "RL_notes.pdf"
-["xelatex"] 1506241959 "RL_notes.tex" "RL_notes.xdv" "RL_notes" 1506241961
+["xelatex"] 1506246251 "RL_notes.tex" "RL_notes.xdv" "RL_notes" 1506246253
   "/dev/null" 1506234058 0 d41d8cd98f00b204e9800998ecf8427e ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1480098689 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -125,18 +125,18 @@
   "/usr/local/texlive/2017/texmf-dist/web2c/texmf.cnf" 1494087824 32646 eadc4ca26cdbe7105ac7c593aa8c4f72 ""
   "/usr/local/texlive/2017/texmf-var/web2c/xetex/xelatex.fmt" 1505630566 3705034 9ca1a805f84889e9877f5f1c4e51d776 ""
   "/usr/local/texlive/2017/texmf.cnf" 1505630525 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "RL_notes.aux" 1506241961 692 5c8d868945ef53b891d887a2ea235d06 ""
-  "RL_notes.out" 1506241961 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "RL_notes.tex" 1506241241 502 9aa52161cbf0aa7433e289ce76f6134e ""
-  "RL_notes.toc" 1506241961 0 d41d8cd98f00b204e9800998ecf8427e ""
-  "include/part1.aux" 1506241961 48 9cf1fe235cbf6c346b93ed4f6f5e10a3 ""
-  "include/part1.tex" 1506241955 1566 522d926e96ac5a9b36bd672b5bcf55b8 ""
+  "RL_notes.aux" 1506246253 692 5c8d868945ef53b891d887a2ea235d06 ""
+  "RL_notes.out" 1506246253 495 d1d49241b1c3b6ad6428f2efa3cbb265 ""
+  "RL_notes.tex" 1506243146 490 56a2dcc31eeae25ae7e2c2ac19a4a1ff ""
+  "RL_notes.toc" 1506246253 314 f959cda0229094b9084fecb3ee3d6f18 ""
+  "include/part1.aux" 1506246253 1261 f177c27a76508cbdea9a6db981f0edd0 ""
+  "include/part1.tex" 1506246219 2604 a6b767fa0093f4645527266ae386a719 ""
   (generated)
+  "RL_notes.toc"
+  "include.tex"
+  "RL_notes.log"
+  "RL_notes.out"
+  "include/part1.tex.aux"
   "include/part1.aux"
   "RL_notes.xdv"
-  "RL_notes.log"
-  "include/part1.tex.aux"
-  "RL_notes.out"
   "RL_notes.aux"
-  "include.tex"
-  "RL_notes.toc"

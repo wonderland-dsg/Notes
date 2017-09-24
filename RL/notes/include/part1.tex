@@ -10,20 +10,53 @@ $Q_t(a) \approx q_* (a)$, 每次采取奖励最大的动作作为当前动作，
 我们需要获得每一个动作的奖励的估计，一种简单的方法就是使用平均数：
 $$ Q_t(a)=\frac{ \sum_{i=1}^{t-1} R_i \cdot \boldsymbol{1}_{A_i=a} }{ \sum_{i=1}^{t-1}\boldsymbol{1}_{A_i=a} } $$
 为了平衡探索和利用，我们在贪心算法中以概率$\epsilon$随机选择动作，最终的决策为：
-$$
-A_t=
-\begin{cases}
-  \mathop{\arg\max}_a Q_t(a) & \mbox { possibility is 1 - \epsilon }\\
-  random & \mbox{possibility is \epsilon}
+\begin{equation*}
+A_t=\begin{cases}%\mathop{\arg\max}
+
+  \mathop{\arg\max}_a (Q_t(a)) &\mbox{ possibility is }1 -  \epsilon \\
+  random &\mbox{possibility is }\epsilon
+
 \end{cases}
-$$
-算法步骤：
-\begin{algorithm}[H]
+\end{equation*}
+
+算法见Algorithm 1：
+\paragraph{Upper-Confidence-bound Action Selection}
+使用上面的方法可能会导动作的选择局限在很小的范围之内，
+我们通过改变优化函数来避免这个问题的发生$$ A_t=\mathop{\arg\max}_a (Q_t(a)+c \sqrt{\frac{logt}{N_t a}})$$
+
+
+
+\begin{algorithm}[]
     \caption{$\epsilon-greedy$}
-    \KwIn{摇臂数 K；奖赏函数 R；尝试次数 T；探索概率 \epsilon}
+    \KwIn{摇臂数 K；}
+    \KwIn{奖赏函数 R；}
+    \KwIn{尝试次数 T；}
+    \KwIn{探索概率 $\epsilon$ ;}
     \KwOut{累计奖励 r}
 
-    r=0\;
+    $r=0$\;
     $\forall a =1,2,\cdots,K:Q_0(a)=0,count(a)=0$\;
-
+    For{$t=1;t \le T;t++$}
+    {
+      \eIf{rand()$\le \epsilon$}
+      {
+        $k=$random in$1,2,\cdots,T$\;
+      }
+      {
+        $k=\mathop{\arg\max}_aQ(a)$\;
+      }
+      $v=R(k)$\;
+      $r=r+v$\;
+      $Q(k)=\frac{Q(k)\cdot count(k)+v}{count(k)+1}$\;
+      $count(k)++$\;
+    }
 \end{algorithm}
+\section{Gradient Bandit Algorithm}
+我们可以考虑给每一个动作$a$学习一个值$H_t (a)$，反应选择动作的时候对$a$的偏爱程度。使用soft-max
+分布：$$
+Pr\{A_t =a\}=\frac{e^{H_t (a)}}{\sum_{b=1}^{k} e^{H_t(b)}}=\pi_t(a)
+$$
+使用梯度上升法，更新规则为：
+$$
+H_{t+1}(a)=H_t(a)+\alpha (R_t-\bar{R_t})(\boldsymbol{1}_{a=A_t}-\pi_t(a)),\ \ \ \forall a
+$$
