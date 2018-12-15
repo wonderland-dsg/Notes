@@ -1,4 +1,0 @@
-\contentsline {part}{第一部分\hspace {1em}Multi-arm bandits}{2}{part.1}
-\contentsline {section}{\numberline {1}Action-Value Method}{2}{section.1}
-\contentsline {paragraph}{Upper-Confidence-bound Action Selection}{2}{paragraph*.2}
-\contentsline {section}{\numberline {2}Gradient Bandit Algorithm}{3}{section.2}
